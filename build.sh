@@ -1,9 +1,12 @@
-#!/bin/zsh
+#!/usr/bin/bash
 RED="\033[1;31m"
 NOCOLOR="\033[0m"
 
-SERIAL="/dev/cu.usbserial-AK06TYUI"
-FQBN="arduino:avr:uno"
+SERIAL="COM4"
+#SERIAL="/dev/cu.usbserial-AK06TYUI"
+FQBN="esp8266:esp8266:nodemcuv2"
+#FQBN="arduino:avr:uno"
+
 
 arduino-cli compile --fqbn $FQBN .
 if [ $? -eq 0 ]; then
